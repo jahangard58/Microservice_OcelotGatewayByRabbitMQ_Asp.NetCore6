@@ -1,0 +1,46 @@
+{
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:7207"
+  },
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/gateway/Product",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/Product",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7242
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Product/{id}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ],
+      "DownstreamPathTemplate": "/api/Product/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7242
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Product",
+      "UpstreamHttpMethod": [ "Post", "Put" ],
+      "DownstreamPathTemplate": "/api/Product",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7242
+        }
+      ]
+    }
+
+  ]
+}
+//For Test ProductList from GateWay in PostMan ==> https://localhost:7207/gateway/Product
+
